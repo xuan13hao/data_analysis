@@ -1,0 +1,100 @@
+#!/usr/bin/perl -w
+use strict;
+use Cwd;
+use Getopt::Long;
+
+my $files;
+my $IDs;
+my $out;
+my $minDP = 10;
+
+GetOptions (
+  "files=s" => \$files,
+  "IDs=s" => \$IDs,
+  "out=s" => \$out,
+  "minDP=i" => \$minDP
+) or die("Error in command line arguments\n");
+
+if(!defined $files || !defined $IDs || !defined $out)  {
+  print "MergeCountMatrices.pl: merge per-sample gene counts into a combined matrix\n";
+  print "Usage: perl MergeCountMatrices --files=[COUNT_FILES] --IDs=[IDS] --out=[OUTPUT_FILE]\n";
+  print "	--files:	the gene count files, separated by comma\',\'\n";
+  print "	--IDs:		the IDs for the samples, separated by comma\',\'\n";
+  print "	--out:		the output file\n";
+  print "	--minDP:	require at least one sample to have at least [minDP] covering read to output (default 10)\n";
+  print "\n";
+  exit();
+}
+
+my @countFiles = split /\,/, $files;
+my @sampleIDs = split /\,/, $IDs;
+
+my %results;
+my $fileCounter = 0;
+foreach(@countFiles) {
+  my $file = $_;
+  
+  # extract the count information
+  my %count_hash;  
+  my $total_count = 0;
+  print "$file\n";
+  open my $IN, "<$file" or die "Cannot open file: $!\n";
+  while(<$IN>) {
+    my @decom = split /\s+/, $_;
+    $count_hash{$decom[0]} = $decom[1];
+    $total_count += $decom[1];
+  }
+  close $IN;
+
+  # paste the output to results
+  if(scalar keys %results <= 0)  {
+    foreach(keys %count_hash) {
+      push @{$results{$_}}, $count_hash{$_};
+    }
+  } else  {
+    # first consider the genes that are present in results
+    foreach(keys %results) {
+      if(exists $count_hash{$_})  {
+        push @{$results{$_}}, $count_hash{$_};
+        delete $count_hash{$_};
+      } else  {
+        push @{$results{$_}}, 0;
+      }
+    }
+    # adding genes that might not be in results
+    foreach(keys %count_hash) {
+      for(my $i = 0; $i < $fileCounter; ++ $i) {
+        push @{$results{$_}}, 0;
+      }
+      push @{$results{$_}}, $count_hash{$_};
+    }
+  }
+  ++ $fileCounter;
+}
+
+
+# output the results
+open my $OUT, ">$out" or die "Cannot create file: $!\n";
+print $OUT "name\t";
+my $i;
+for($i = 0; $i < scalar(@sampleIDs); ++ $i) {
+  print $OUT "$sampleIDs[$i]\t" if($i < scalar(@sampleIDs) - 1);
+  print $OUT "$sampleIDs[$i]" if($i == scalar(@sampleIDs) - 1);
+} 
+print $OUT "\n";
+
+foreach(sort keys %results) {
+  # check if all values are 0
+  my $print_tag = 0;
+  for($i = 0; $i < scalar(@{$results{$_}}); ++ $i) {
+    if(${$results{$_}}[$i] >= $minDP) { $print_tag = 1; last;}
+  } 
+  next if(!$print_tag);
+  print $OUT "$_\t";
+  for($i = 0; $i < scalar(@{$results{$_}}); ++ $i) {
+    print $OUT "${$results{$_}}[$i]\t" if ($i < scalar(@{$results{$_}}) - 1);
+    print $OUT "${$results{$_}}[$i]" if ($i == scalar(@{$results{$_}}) - 1); 
+  } 
+  print $OUT "\n";
+}
+close $OUT;

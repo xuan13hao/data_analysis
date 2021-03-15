@@ -1,0 +1,40 @@
+#!/usr/bin/perl -w
+use strict;
+
+my $file = shift;   # the count matrix file
+my $ucscAllInfo = shift;    # the UCSC file contains the ID and gene name
+
+my $header;
+my @gName;
+my @contents;
+
+open my $IN, "<$file" or die "Cannot open file: $!\n";
+$header = <$IN>;
+while(<$IN>) {
+    chomp;
+    my @decom = split /\t/, $_;
+    push @gName, (shift @decom);
+    push @contents, \@decom;
+}
+close $IN;
+
+my %nameHash;
+open my $UIN, "<$ucscAllInfo" or die "Cannot open file: $!\n";
+my $foo = <$UIN>;
+while(<$UIN>) {
+    my @decom = split /\t/, $_;
+    $nameHash{$decom[1]} = $decom[12];
+}
+close $UIN;
+
+# output the counts
+my $i; my $j;
+print "$header";
+for($i = 0; $i < scalar(@contents); ++ $i)   {
+    print "$nameHash{$gName[$i]}\t" if exists $nameHash{$gName[$i]};
+    print "$gName[$i]\t" if !exists $nameHash{$gName[$i]};
+    for($j = 0; $j < scalar(@{$contents[$i]}); ++ $j)   {
+        print "$contents[$i][$j]\t";
+    }
+    print "\n";
+}

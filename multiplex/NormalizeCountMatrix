@@ -1,0 +1,48 @@
+#!/usr/bin/perl -w
+use strict;
+
+my $file = shift;   # the read count file
+my $header;
+my @gName;
+my @contents;
+my @sum;
+
+open my $IN, "<$file" or die "Cannot open file: $!\n";
+$header = <$IN>;
+while(<$IN>) {
+    chomp;
+    my @decom = split /\t/, $_;
+    push @gName, (shift @decom);
+    push @contents, \@decom;
+}
+close $IN;
+
+my $i; my $j;
+for($i = 0; $i < scalar(@contents); ++ $i)   {
+    for($j = 0; $j < scalar(@{$contents[$i]}); ++ $j)   {
+        $sum[$j] += $contents[$i][$j];
+    }
+}
+
+for($i = 0; $i < scalar(@sum); ++ $i)   {
+    $sum[$i] /= 1000000000;
+}
+
+for($i = 0; $i < scalar(@contents); ++ $i)   {
+    for($j = 0; $j < scalar(@{$contents[$i]}); ++ $j)   {
+        $contents[$i][$j] /= $sum[$j];
+    }
+}
+
+# output the normalized counts
+print "$header";
+for($i = 0; $i < scalar(@contents); ++ $i)   {
+    print "$gName[$i]\t";
+    for($j = 0; $j < scalar(@{$contents[$i]}); ++ $j)   {
+        print "$contents[$i][$j]\t";
+    }
+    print "\n";
+}
+
+
+

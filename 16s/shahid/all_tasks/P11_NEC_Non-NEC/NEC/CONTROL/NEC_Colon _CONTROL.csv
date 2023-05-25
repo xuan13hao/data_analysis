@@ -1,0 +1,94 @@
+#NAME,Experiment,Tissue type,DOL,Genotype
+050A,C,colon,DOL11,Sig Homo 
+051A,C,colon,DOL11,Sig HET
+052A,C,colon,DOL11,Sig Homo 
+058A,C,colon,DOL11,Sig HET
+059A,C,colon,DOL11,Sig Homo
+060A,C,colon,DOL11,Sig HET
+064A,C,colon,DOL11,Sig Homo
+065A,C,colon,DOL11,Sig Homo
+066A,C,colon,DOL11,Sig HET
+067A,C,colon,DOL11,Sig HET
+073A,C,colon,DOL11,Sig WT
+074A,C,colon,DOL11,Sig Homo
+075A,C,colon,DOL11,Sig WT
+076A,C,colon,DOL11,Sig Homo
+080A,C,colon,DOL11,Sig HET
+081A,C,colon,DOL11,Sig WT
+082A,C,colon,DOL11,Sig HET
+083A,C,colon,DOL11,Sig WT
+084A,C,colon,DOL11,Sig HET
+085A,C,colon,DOL11,Sig WT
+086A,C,colon,DOL11,Sig Homo
+087A,C,colon,DOL11,Sig HET
+088A,C,colon,DOL11,Sig WT
+095A,C,colon,DOL11,Sig Homo
+096A,C,colon,DOL11,Sig HET
+097A,C,colon,DOL11,Sig WT
+102A,C,colon,DOL11,Sig HET
+103A,C,colon,DOL11,Sig Homo
+104A,C,colon,DOL11,Sig HET
+105A,C,colon,DOL11,Sig WT
+106A,C,colon,DOL11,Sig WT
+107A,C,colon,DOL11,Sig WT
+214A,C,colon,DOL11,Sig HET
+215A,C,colon,DOL11,Sig WT
+216A,C,colon,DOL11,Sig HET
+226A,C,colon,DOL11,Sig WT
+227A,C,colon,DOL11,Sig WT
+228A,C,colon,DOL11,Sig WT
+229A,C,colon,DOL11,Sig Homo
+230A,C,colon,DOL11,Sig HET
+231A,C,colon,DOL11,Sig HET
+232A,C,colon,DOL11,Sig HET
+233A,C,colon,DOL11,Sig Homo
+234A,C,colon,DOL11,Sig Homo
+235A,C,colon,DOL11,Sig WT
+236A,C,colon,DOL11,Sig HET
+237A,C,colon,DOL11,Sig Homo
+238A,C,colon,DOL11,Sig Homo
+239A,C,colon,DOL11,Sig Homo
+240A,C,colon,DOL11,Sig HET
+100A,NEC,colon,DOL11,Sig WT
+101A,NEC,colon,DOL11,Sig WT
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+217A,NEC,colon,DOL11,Sig Homo
+218A,NEC,colon,DOL11,Sig WT
+219A,NEC,colon,DOL11,Sig WT
+220A,NEC,colon,DOL11,Sig WT
+221A,NEC,colon,DOL11,Sig HET
+222A,NEC,colon,DOL11,Sig HET
+223A,NEC,colon,DOL11,Sig Homo
+224A,NEC,colon,DOL11,Sig WT
+225A,NEC,colon,DOL11,Sig Homo
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+241A,NEC,colon,DOL11,Sig Homo
+242A,NEC,colon,DOL11,Sig WT
+243A,NEC,colon,DOL11,Sig Homo
+244A,NEC,colon,DOL11,Sig Homo
+245A,NEC,colon,DOL11,Sig WT
+246A,NEC,colon,DOL11,Sig WT
+247A,NEC,colon,DOL11,Sig HET
+248A,NEC,colon,DOL11,Sig WT

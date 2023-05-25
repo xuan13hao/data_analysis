@@ -1,16 +1,17 @@
 library(dada2); packageVersion("dada2")
-path <- "/home/h392x566/Project_Folder/16s/data/Ahmed-16S-68_0mismatches"
+path <- "/home/h392x566/Project_Folder/2023_Umar/2023_Umar/data/analysis_data/data_prepare"
 
 fnFs <- sort(list.files(path, pattern="_R1_001.fastq", full.names = TRUE))
 fnRs <- sort(list.files(path, pattern="_R2_001.fastq", full.names = TRUE))
-sample.names <- sapply(strsplit(basename(fnFs), "_"), `[`, 2)
+sample.names <- sapply(strsplit(basename(fnFs), "_S.*_"), `[`, 1)
+# sample.name <- gsub("_.*", "", basename(fnFs))
 sample.names
 
 filtFs <- file.path(path, "filtered", paste0(sample.names, "_F_filt.fastq.gz"))
 filtRs <- file.path(path, "filtered", paste0(sample.names, "_R_filt.fastq.gz"))
-out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(260,240),
+out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(290,270),
                      maxN=0, truncQ=2, rm.phix=TRUE,
-                     compress=TRUE, multithread=TRUE, trimLeft = c(15,15), verbose = TRUE)
+                     compress=TRUE, multithread=TRUE, trimLeft = c(15,20), verbose = TRUE)
 #
 errF <- learnErrors(filtFs, multithread=TRUE)
 errR <- learnErrors(filtRs, multithread=TRUE)

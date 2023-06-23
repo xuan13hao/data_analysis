@@ -89,24 +89,24 @@ colnames(species_table) <- species_header
 write.csv(t(species_table), "species_table_taxa.csv")
 
 
-# # output
-# asv_seqs <- colnames(seqtab.nochim)
-# asv_headers <- vector(dim(seqtab.nochim)[2], mode="character")
+# output
+asv_seqs <- colnames(seqtab.nochim)
+asv_headers <- vector(dim(seqtab.nochim)[2], mode="character")
 
-# for (i in 1:dim(seqtab.nochim)[2]) {
-#   asv_headers[i] <- paste(">ASV", i, sep="_")
-# }
+for (i in 1:dim(seqtab.nochim)[2]) {
+  asv_headers[i] <- paste(">ASV", i, sep="_")
+}
 
-#   # making and writing out a fasta of our final ASV seqs:
-# asv_fasta <- c(rbind(asv_headers, asv_seqs))
-# write(asv_fasta, "ASVs.fa")
+  # making and writing out a fasta of our final ASV seqs:
+asv_fasta <- c(rbind(asv_headers, asv_seqs))
+write(asv_fasta, "ASVs_Umar.fa")
 
-#   # count table:
-# asv_tab <- t(seqtab.nochim)
-# row.names(asv_tab) <- sub(">", "", asv_headers)
-# write.table(asv_tab, "ASVs_counts.tsv", sep="\t", quote=F, col.names=NA)
+  # count table:
+asv_tab <- t(seqtab.nochim)
+row.names(asv_tab) <- sub(">", "", asv_headers)
+write.table(asv_tab, "ASVs_counts_Umar.tsv", sep="\t", quote=F, col.names=NA)
 
-#   # tax table:
-# asv_tax <- taxa
-# row.names(asv_tax) <- sub(">", "", asv_headers)
-# write.table(asv_tax, "ASVs_taxonomy.tsv", sep="\t", quote=F, col.names=NA)
+  # tax table:
+asv_tax <- taxa
+row.names(asv_tax) <- sub(">", "", asv_headers)
+write.table(asv_tax, "ASVs_taxonomy_Umar.tsv", sep="\t", quote=F, col.names=NA)

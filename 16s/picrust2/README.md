@@ -36,6 +36,7 @@ hsp.py -i 16S -t ASV_Umar.tre -o 16S_predicted.tsv -m mp -p 4 -n
 Similarly, this command will generate predictions on how many copies of each gene family are found in each predicted genome. We wont bother calculating NSTI values again since it would be the same as above.
 
 hsp.py -i EC -t ASV_Umar.tre -o EC_predicted.tsv -p 4 -m mp
+hsp.py -i KO -t ASV_Umar.tre -o KO_predicted.tsv -p 4 -m mp
 
 sort -k 3 16S_predicted.tsv
 
@@ -45,11 +46,18 @@ metagenome_pipeline.py -i ASVs_counts_Umar.tsv \
                        -m 16S_predicted.tsv \
                        -f EC_predicted.tsv \
                        -o EC_metagenome_out
-
+metagenome_pipeline.py -i ASVs_counts_Umar.tsv \
+                       -m 16S_predicted.tsv \
+                       -f KO_predicted.tsv \
+                       -o KO_metagenome_out
 ## Infer MetaCyc pathway abundances and coverages based on predicted E.C. number abundances
 
 pathway_pipeline.py -i EC_metagenome_out/pred_metagenome_unstrat.tsv.gz \
                     -o pathways_out \
+                    --intermediate pathways_working \
+                    -p 1
+pathway_pipeline.py -i KO_metagenome_out/pred_metagenome_unstrat.tsv.gz \
+                    -o KO_pathways_out \
                     --intermediate pathways_working \
                     -p 1
 
@@ -60,3 +68,40 @@ add_descriptions.py -i EC_metagenome_out/pred_metagenome_unstrat.tsv.gz -m EC \
 
 add_descriptions.py -i pathways_out/path_abun_unstrat.tsv.gz -m METACYC \
                     -o pathways_out/path_abun_unstrat_descrip.tsv.gz
+
+add_descriptions.py -i KO_metagenome_out/pred_metagenome_unstrat.tsv.gz -m KO \
+                    -o KO_metagenome_out/pred_metagenome_unstrat_descrip.tsv.gz
+
+## Plot
+
+
+abundance_file <- "/home/xuan/BioinformaticTools/16s/picrust2/test.tsv"
+metadata <- read_delim(
+    "/home/xuan/BioinformaticTools/16s/picrust2/test_grp.csv",
+    delim = "\t",
+    escape_double = FALSE,
+    trim_ws = TRUE
+)
+
+
+daa_results_df_annotated <- daa_results_df_annotated[!is.na(daa_results_df_annotated$pathway_name),]
+
+daa_results_df_annotated$p_adjust <- round(daa_results_df_annotated$p_adjust,5)
+
+low_p_feature <- daa_results_df_annotated[order(daa_results_df_annotated$p_adjust), ]$feature[1:20]
+
+daa_results_list <-
+  ggpicrust2(
+    file = abundance_file,
+    metadata = metadata,
+    group = "Experiment",
+    pathway = "EC",
+    daa_method = "LinDA",
+    p_values_bar = TRUE,
+    order = "group",
+    ko_to_kegg = FALSE,
+    x_lab = "description",
+    p.adjust = "BH",
+    select = NULL,
+    reference = NULL
+  )

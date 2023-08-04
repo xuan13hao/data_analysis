@@ -1,4 +1,4 @@
-# BioinformaticTools
+# Bioinformatic Data Analysis
 
 ## 16S rRNA Data Analysis
 Use DADA2 Taxonomic Classification to generate OTU Clustering or Amplicon Sequence Variant (ASV) Identification. Use PICRUSt2 to predictethe functional potential of microbial communities based on 16S rRNA gene sequencing data. 

@@ -7,3 +7,6 @@ Use machine learning methods, LEfSe and Random Forest, to explore the signicance
 Read Alignment or Mapping, Quantification of Gene Expression, Normalization, Differential Expression Analysis
 ## VCF Data Analysis
 Etract VCF data to CSV, merge CSV
+
+## Example
+![image info](output.png)

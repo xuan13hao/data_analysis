@@ -1,4 +1,4 @@
-#NAME	Experiment	Tissue type	DOL	Genotype
+	Experiment	Tissue type	DOL	Genotype
 050A	C	colon	DOL11	Sig Homo 
 051A	C	colon	DOL11	Sig HET
 052A	C	colon	DOL11	Sig Homo 

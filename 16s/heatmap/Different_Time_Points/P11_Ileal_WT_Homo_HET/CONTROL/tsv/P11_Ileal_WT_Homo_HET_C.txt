@@ -1,4 +1,4 @@
-#NAME	Experiment	Tissue type	DOL	Genotype
+	Experiment	Tissue type	DOL	Genotype
 050B	C	TI	DOL11	Sig Homo 
 051B	C	TI	DOL11	Sig HET
 052B	C	TI	DOL11	Sig Homo 

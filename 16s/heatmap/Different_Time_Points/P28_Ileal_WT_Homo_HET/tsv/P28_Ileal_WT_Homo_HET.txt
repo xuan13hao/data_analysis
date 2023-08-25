@@ -1,4 +1,4 @@
-#NAME	Experiment	Tissue type	DOL	Genotype
+	Experiment	Tissue type	DOL	Genotype
 108B	C	TI	DOL28	Sig HET
 109B	C	TI	DOL28	Sig Homo
 110B	C	TI	DOL28	Sig HET 

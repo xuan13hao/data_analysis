@@ -1,4 +1,4 @@
-#NAME	Experiment	Tissue type	DOL	Genotype
+	Experiment	Tissue type	DOL	Genotype
 139B	C	TI	DOL14	Sig HET
 140B	C	TI	DOL14	Sig WT 
 141B	C	TI	DOL14	Sig Homo

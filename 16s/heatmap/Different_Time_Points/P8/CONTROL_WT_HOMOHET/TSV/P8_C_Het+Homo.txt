@@ -1,4 +1,4 @@
-#NAME	Experiment	Tissue type	DOL	Genotype
+	Experiment	Tissue type	DOL	Genotype
 1	C	colon	DOL8	Sig Homo_HET 
 2	C	colon	DOL8	Sig WT
 3	C	colon	DOL8	Sig Homo_HET 

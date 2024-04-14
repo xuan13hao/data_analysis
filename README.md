@@ -1,12 +1,11 @@
 # Bioinformatic Data Analysis
 
 ## 16S rRNA Data Analysis
-Use DADA2 Taxonomic Classification to generate OTU Clustering or Amplicon Sequence Variant (ASV) Identification. Use PICRUSt2 to predictethe functional potential of microbial communities based on 16S rRNA gene sequencing data. 
+Use DADA2 Taxonomic Classification to generate OTU Clustering or Amplicon Sequence Variant (ASV) Identification. Use PICRUSt2 to predicte the functional potential of microbial communities based on 16S rRNA gene sequencing data. 
 Use machine learning methods, LEfSe and Random Forest, to explore the signicances of different groups.
 ## RNA-seq Data Analysis
 Read Alignment or Mapping, Quantification of Gene Expression, Normalization, Differential Expression Analysis
-## VCF Data Analysis
-Etract VCF data to CSV, merge CSV
+
 ## Contribution
 Woolbright, B.L., Xuan, H., Ahmed, I. et al. Aging induces changes in cancer formation and microbial content in a murine model of bladder cancer. GeroScience (2024). https://doi.org/10.1007/s11357-024-01064-9
 

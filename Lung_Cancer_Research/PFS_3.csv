@@ -1,4 +1,4 @@
-feature,t-statistic,p-value
+feature,u-statistic,p-value
 RECNO,51.0,0.8711700199114387
 PFS_3,0.0,2.0198740441245073e-06
 PFS_6,12.0,0.0012071955613174588

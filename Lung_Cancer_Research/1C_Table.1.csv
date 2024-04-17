@@ -1,0 +1,13 @@
+Feature,Group,prediction
+R12T12,Akkermansia,0.258
+,One-carbon metabolic process,0.557
+,Pfam,0.658
+R3T3,Akkermansia,0.219
+,One-carbon metabolic process,0.279
+,Pfam,0.478
+R123T123,Akkermansia,0.155
+,One-carbon metabolic process,0.276
+,Pfam,0.467
+R123T3,Akkermansia,0.213
+,One-carbon metabolic process,0.266
+,Pfam,0.48

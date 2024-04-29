@@ -1,13 +1,21 @@
-Feature,Group,prediction,,
-Akkermansia,R12T12,0.258,,
-,R3T3,0.219,,
-,R123T123,0.155,,
-,R123T3,0.213,,
-One-carbon metabolic process,R12T12,0.557,,
-,R3T3,0.279,,
-,R123T123,0.276,,
-,R123T3,0.266,,
-Pfam,R12T12,0.658,,
-,R3T3,0.478,,
-,R123T123,0.467,,
-,R123T3,0.48,,
+Feature,Group,prediction
+Akkermansia,R12T12,0.258
+,R3T3,0.219
+,R123T123,0.155
+,R123T3,0.213
+One-carbon metabolic process,R12T12,0.557
+,R3T3,0.279
+,R123T123,0.276
+,R123T3,0.266
+Methanogenesis,R12T12,0.5456
+,R3T3,0.2441
+,R123T123,0.2086
+,R123T3,0.196
+One-carbon and methanogenesis,R12T12,0.5658
+,R3T3,0.2655
+,R123T123,0.2776
+,R123T3,0.254
+Pfam,R12T12,0.658
+,R3T3,0.478
+,R123T123,0.467
+,R123T3,0.48

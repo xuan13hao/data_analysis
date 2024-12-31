@@ -18,5 +18,5 @@ Benjamin L. Woolbright, Erika Abbott, Ganeshkumar Rajendran, Cuncong Zhong, Hao 
 Chavez-Bueno, Susana; Xuan, Hao; Umar, Shahid; Zhong, Concong; Yu, Wei; and Sampath, Venkatesh, "Neonatal Gut Microbiota Alterations and Local Inflammation Induced by Escherichia coli Infection are Modified by Lactobacillus rhamnosus Prophylaxis" (2021). Presentations. 28.
 https://scholarlyexchange.childrensmercy.org/presentations/28
 
-<!-- ## Example
-![image info](output.png) -->
+## Example
+![image info](output.png)

@@ -7,7 +7,7 @@ Use machine learning methods, LEfSe and Random Forest, to explore the signicance
 Read Alignment or Mapping, Quantification of Gene Expression, Normalization, Differential Expression Analysis
 
 ## Contribution
-Xuan, H., Umar, S., Zhong, C. et al. Lactobacillus rhamnosus modulates murine neonatal gut microbiota and inflammation caused by pathogenic Escherichia coli. BMC Microbiol 24, 452 (2024).
+Xuan, H., Umar, S., Zhong, C. et al. Lactobacillus rhamnosus modulates murine neonatal gut microbiota and inflammation caused by pathogenic Escherichia coli. BMC Microbiol 24, 452 (2024). https://doi.org/10.1186/s12866-024-03598-6
 
 Woolbright, B.L., Xuan, H., Ahmed, I. et al. Aging induces changes in cancer formation and microbial content in a murine model of bladder cancer. GeroScience (2024). https://doi.org/10.1007/s11357-024-01064-9
 
@@ -19,4 +19,4 @@ Chavez-Bueno, Susana; Xuan, Hao; Umar, Shahid; Zhong, Concong; Yu, Wei; and Samp
 https://scholarlyexchange.childrensmercy.org/presentations/28
 
 ## Example
-![image info](output.png)
+![image info](heatmap.png)

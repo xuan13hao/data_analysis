@@ -1,0 +1,6 @@
+"Feature",Pvalues,FDR,PBS-PBS,Lac-PBS,PBS-SCB34,Lac-SCB34,LDAscore
+Enterococcus_avium,0.00051591,0.0027615,0,0,79.6,112.17,1.76
+Lactobacillus_intestinalis,0.0009205,0.0027615,17.2,10.8,7910.6,19106,3.98
+Romboutsia_ilealis,0.0022223,0.0044447,1928.8,112.6,1187.2,86.167,2.96
+Haemophilus_parainfluenzae,0.0069459,0.010419,0,0,93.6,20.333,1.68
+Escherichia_Shigella_boydii,0.040633,0.040633,1860.2,1430.8,695.4,1129.7,2.77

@@ -9,6 +9,8 @@ Read Alignment or Mapping, Quantification of Gene Expression, Normalization, Dif
 ## Contribution
 Xuan, H., Umar, S., Zhong, C. et al. Lactobacillus rhamnosus modulates murine neonatal gut microbiota and inflammation caused by pathogenic Escherichia coli. BMC Microbiol 24, 452 (2024). https://doi.org/10.1186/s12866-024-03598-6
 
+Umar, S., Yu, W., Xuan, H., Ahmed, I., Zhong, C., Morowitz, M., ... & Sampath, V. (2025). Neonatal gut microbiota succession in mice mapped over time, site, injury and single immunoglobulin interleukin-1 related receptor genotype. iScience, 28(4).
+
 Woolbright, B.L., Xuan, H., Ahmed, I. et al. Aging induces changes in cancer formation and microbial content in a murine model of bladder cancer. GeroScience (2024). https://doi.org/10.1007/s11357-024-01064-9
 
 Andres, E.M.; Earnest, K.K.; Xuan, H.; Zhong, C.; Rice, M.L.; Raza, M.H. Innovative Family-Based Genetically Informed Series of Analyses of Whole-Exome Data Supports Likely Inheritance for Grammar in Children with Specific Language Impairment. Children 2023, 10, 1119. https://doi.org/10.3390/children10071119
